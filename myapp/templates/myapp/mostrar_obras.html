@@ -4,13 +4,46 @@
 <head>
     <link rel="icon" href="{% static 'arte/favicon.ico' %}" type="image/x-icon">
     <meta charset="UTF-8">
-    <title>Mostrar Obras</title>
+    <title>Obras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .mosaico {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .obra {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .obra strong {
+            color: #2980b9;
+        }
+        .sin-obras {
+            text-align: center;
+            color: #e74c3c;
+        }
+    </style>
 </head>
 <body>
-    <h1>Lista de Obras</h1>
-    <ul>
+    <h1><u>Obras actuales</u></h1>
+    <div class="mosaico">
         {% for obra in obras %}
-            <li>
+            <div class="obra">
                 <strong>Título:</strong> {{ obra.titulo }}<br>
                 <strong>Género:</strong> {{ obra.genero }}<br>
                 <strong>Dimensiones:</strong> {{ obra.dimensiones }}<br>
@@ -18,10 +51,12 @@
                 <strong>Precio:</strong> ${{ obra.precio }}<br>
                 <strong>Nombre del Artista:</strong> {{ obra.nombre_artista }}<br>
                 <strong>Nacionalidad:</strong> {{ obra.nacionalidad }}<br>
-            </li>
+            </div>
         {% empty %}
-            <li>No hay obras registradas.</li>
+            <div class="sin-obras">
+                <p>No hay obras registradas.</p>
+            </div>
         {% endfor %}
-    </ul>
+    </div>
 </body>
 </html>
