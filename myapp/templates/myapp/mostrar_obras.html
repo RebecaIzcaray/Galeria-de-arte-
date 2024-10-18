@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" href="{% static 'arte/favicon.ico' %}" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>Mostrar Obras</title>
+</head>
+<body>
+    <h1>Lista de Obras</h1>
+    <ul>
+        {% for obra in obras %}
+            <li>
+                <strong>Título:</strong> {{ obra.titulo }}<br>
+                <strong>Género:</strong> {{ obra.genero }}<br>
+                <strong>Dimensiones:</strong> {{ obra.dimensiones }}<br>
+                <strong>Año:</strong> {{ obra.año }}<br>
+                <strong>Precio:</strong> ${{ obra.precio }}<br>
+                <strong>Nombre del Artista:</strong> {{ obra.nombre_artista }}<br>
+                <strong>Nacionalidad:</strong> {{ obra.nacionalidad }}<br>
+            </li>
+        {% empty %}
+            <li>No hay obras registradas.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

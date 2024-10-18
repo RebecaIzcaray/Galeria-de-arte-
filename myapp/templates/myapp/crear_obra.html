@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" href="{% static 'arte/favicon.ico' %}" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tourney:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'arte/styles.css' %}">
+    
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            font-family: 'kanit', sans-serif;
+            background-color: #6abadf; /* Color fondo */
+        }
+
+        h1 {
+            margin-bottom: 15px; 
+            font-weight: 500;
+            color: #faf8f8; 
+            font-size: 50px; 
+            font-family: 'Tourney', sans-serif;
+        }
+        .page-header {
+            background-image: url("{% static 'arte/imagen1.jpg' %}"); /* imagen encabezado */
+            background-size: cover; /* Cubre todo el área */
+            background-position: center; /* Centra la imagen */
+            width: 100%; /* Asegúrate de que ocupe todo el ancho */
+            padding: 40px 0; /* Espaciado arriba y abajo */
+            
+            text-align: center; /* Centrar texto dentro del encabezado */
+        }
+
+        .form-container {
+            
+            border-radius: 10px; 
+            padding: 15px; 
+            width: 100%;
+            max-width: 250px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        button {
+            margin-top: 10px; 
+            padding: 6px; 
+            background-color: #5A3E25; 
+            color: #FFF; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 12px; 
+            cursor: pointer; 
+            transition: background-color 0.3s; 
+        }
+
+        button:hover {
+            background-color: #4A2F1B; 
+        }
+
+        input, select, textarea {
+            margin-bottom: 4px; /* Espacio entre campos*/
+            padding: 6px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+            font-size: 12px; 
+            width: 100%; 
+            box-sizing: border-box; 
+        }
+
+        .form-container p {
+            margin: 0; /* Sin margen para los párrafos */
+        }
+    </style>
+</head>
+<body>
+    <div class="page-header">
+        <h1>Formulario artistas</h1>
+    </div>
+    <div class="form-container">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+</body>
+</html>

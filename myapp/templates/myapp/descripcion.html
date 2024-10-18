@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" href="{% static 'arte/favicon.ico' %}" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>Galería Rebeca</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Saira', sans-serif; /* Usar la fuente Saira */
+            margin: 0; /* Sin margen en el body */
+            text-align: center;
+            background-color: #FFFACD; /* Color amarillo claro para el fondo */
+        }
+
+        .page-header {
+            background-image: url("{% static 'arte/encabezadovg.jpg' %}"); /* imagen encabezado */
+            background-size: cover; /* Cubre todo el área */
+            background-position: center; /* Centra la imagen */
+            padding: 40px 0; /* Espaciado arriba y abajo */
+            color: rgb(0, 0, 0); /*color del texto */
+        }
+
+        h1 {
+            color: #f5d496; /* Color para el título */
+            font-size: 80px; /* Tamaño del título */
+            margin: 0; /* Sin margen en el título */
+            text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000; /* Borde negro */
+        }
+        
+
+        p {
+            color: #080101; /* Color para la descripción */
+            font-size: 20px; /* Tamaño descripción */
+            line-height: 1.8; /* Ajusta la altura de línea */
+        }
+
+        .fecha {
+            font-size: 18px; /* Tamaño fecha */
+            margin-right: 1000px; /*margen de la fecha para la derecha */
+            color: #ac6407;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-header">
+        <p class="fecha">{{ fecha_hoy }}</p>
+        <h1>Galería Rebeca</h1>
+    </div>
+
+    <style>
+        .descripcion {
+            font-family: 'Saira', sans-serif; /* Cambia la fuente si lo deseas */
+            line-height: 1.6; /* Altura de línea para mejor legibilidad */
+            color: #000000; /* Color del texto */
+            margin: 20px auto; /* Espacio alrededor */
+            padding: 20px; /* Espaciado interno */
+            max-width: 600px; /* Ancho máximo para el contenedor */
+            border-radius: 10px; /* Bordes redondeados opcional */
+            
+        }
+    </style>
+    
+    <div class="descripcion">
+        <p>Bienvenido a nuestra colección de obras de arte.</p>
+        <p>En nuestra Galería de Arte, te invitamos a sumergirte en un mundo de creatividad y expresión. Aquí, celebramos la obra de artistas talentosos de diversas disciplinas, desde pintura hasta escultura y fotografía. Cada pieza cuenta una historia única y refleja la visión de su creador.</p>
+    
+        <p>Nuestra misión es conectar a los amantes del arte con obras que inspiran y provocan reflexión. Ya seas un coleccionista experimentado o un visitante curioso, encontrarás una colección diversa que resalta la riqueza del talento contemporáneo.</p>
+    
+        <p>Explora nuestras exposiciones, participa en eventos y descubre el arte que transforma el espacio y el alma. ¡Bienvenido a un lugar donde la pasión por el arte cobra vida!</p>
+    </div>
+    
+    
+    
+    <p style="color: #28774c; font-size: 18px;">¿Eres artista?</p>
+    <a href="{% url 'crear_obra' %}" style="color: #28744c; font-size: 18px; text-decoration: none;">
+        <u>Vende tu arte con nosotros</u>
+    </a>
+
+</body>
+</html>
+
+
+
+
+    
+</body>
+</html>
